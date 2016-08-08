@@ -9,16 +9,16 @@ import { Component, OnInit } from '@angular/core';
       <div>
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username">
+          <input type="text" class="form-control" id="username" ngModel name="username">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email">
+          <input type="text" class="form-control" id="email" ngModel name="username">
         </div>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password">
+        <label for="password" >Password</label>
+        <input type="password" class="form-control" id="password" ngModel name="username">
       </div>
       <div class="radio">
         <label></label>
