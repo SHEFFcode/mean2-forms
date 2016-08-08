@@ -10,16 +10,16 @@ import {NgForm} from "@angular/forms";
       <div>
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" ngModel name="username">
+          <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" ngModel name="email">
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required>
         </div>
       </div>
       <div class="form-group">
         <label for="password" >Password</label>
-        <input type="password" class="form-control" id="password" ngModel name="password">
+        <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required>
       </div>
       <div class="radio">
         <label></label>
@@ -27,9 +27,19 @@ import {NgForm} from "@angular/forms";
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   `,
-  styles: []
+  styles: [`
+    .ng-invalid {
+    border: 1px solid red;
+    }
+  `]
 })
 export class TemplateDrivenComponent implements OnInit {
+
+  user: any = {
+    username: '',
+    email: '',
+    password: ''
+  };
 
   constructor() { }
 
@@ -37,7 +47,7 @@ export class TemplateDrivenComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    console.log(this.user);
   }
 
 }
