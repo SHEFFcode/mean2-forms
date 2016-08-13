@@ -7,7 +7,7 @@ import {NgForm} from "@angular/forms";
   template: `
     <h1>Template Driven</h1>
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <div>
+      <div ngModelGroup="userData">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" required>
