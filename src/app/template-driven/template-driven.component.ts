@@ -21,8 +21,11 @@ import {NgForm} from "@angular/forms";
         <label for="password" >Password</label>
         <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required>
       </div>
-      <div class="radio">
-        <label></label>
+      <div class="radio" *ngFor="let g of genders">
+        <label>
+          <input type="radio" name="gender" [(ngModel)]="user.gender" [value]="g">
+          {{g}}
+        </label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -38,8 +41,14 @@ export class TemplateDrivenComponent implements OnInit {
   user: any = {
     username: '',
     email: '',
-    password: ''
+    password: '',
+    gender: 'male'
   };
+
+  genders: string[] = [
+    'male',
+    'female'
+  ];
 
   constructor() { }
 
